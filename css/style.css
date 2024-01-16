@@ -1,0 +1,564 @@
+
+/* css reset ker rahe hai jisme body and other element ke liye margin,padding 0 kerdenge ,font daal sakte hai jo sabpe apply ho bydefault and other properties according to your needs */
+
+
+/* font similar se lene chaiye taaki jayda differnt na lage */
+
+
+
+
+/* universal selector */
+*{
+    /* margin and padding 0 kerdi sabke liye */
+    margin: 0;
+    padding: 0;
+}
+
+/* css variable : ye optional hai but recommended hai ager hum first responsive website bna rahe hai apni zindagi ki. isse skip bhi ker sakte hai  */
+
+/* variables bana lenge because ager jo  navbar hai uski height hai to usse hum variable me save kerna chahenge fir uske hisaab se hum margin ,padding and other thimgs de sake   */
+/* so hum yaha pe ye section bna rahe hai variables ka but isse use ni karenhge .isse use karenge just remembering */
+
+:root{
+    /* variable for navbar height */
+    --navbar-height:60px;
+}
+
+
+/* so humne smooth scrolling include ni kari thi. so smooth scrolling ko include or enable kerne ke liye hum html tag ko select karenge as a target and then scroll behaviour naam ki propery ki value smooth daaldenge  */
+
+/* humne isse style.css me dala hai because hum chahte hai ki smooth scrolling phone , desktop and saare devices me apply ho ager responsive.css me daalte to bus chote device me apply hoti per  bade device me nahi because hamari responsive.css 1100px se neeche waale device pe apply hoti hai and style.css sab devices ke liye applicable hai*/
+
+/* to learn more about smooth scrolling google pe search kerke dekho and visit this link given below
+
+https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+/* beautifying or styling navigation bar lets see how we will do it*/
+
+#navbar{
+    /* so navbar ko flexbox bna diya hai using display:flex; so ab navbar flex container hai and jo iske ander boxes ahi wo flex item. so flexbox alignement kerna bhaut easy ho jata hai */
+    /* so flexbox me jitne bhi flex item hai wo rom aa gaye because flex-direction bydefault row hoti hai */
+    display: flex;
+    /* isse saare flex-item vertically center me aa jayenge hume effect ni dikhega abhi kyuki humne #navbar ko height ni di hai so jo uspe space abvailable hai ussi me wo center hoyega */
+    align-items: center;
+    /* isse horizontally center ho jayenge saare flex-item jo flex-box  me hai but abhi iski need ni hai */
+    /* justify-content: center; */
+    
+    /* navbar ko relative kerdenge to navbar ki position relative to its normal positon set ho jayegi  and ye kerne ke baad jo humne #navbar::before me properties daali hai wo properly set ho jayegi*/
+    /* position: relative; */
+
+    /* just think deeply to understand */
+    /*  humne #navbar waale element me position relative de rakhi hai jisse problem aa rahi thi  ki jo hamari website ka navabar hai uspe background nahi aa raha tha  because wo apni position pe rahega relative dene se position ko . so hum position ko absolute kerdeneg to ye apne parent ke uper chala jayega and hum top ko bhi 0 kerdenge for safe side */
+
+    /* position: absolute; */
+
+    /* to understand how to use pseudo selctor  to insert image practically kerke dekho */
+    /* isse apni normal position pe chale jayega navbar */
+    /* position: relative;   */
+
+    
+
+    /* so hum chahte hai ki navbar hang ho jaaye so uske liye iski position ko sticky bana dete hai jisse navbar hang rahega  jab hum scroll karenge jab bhi apni position pe hi .mtlb apni position pe stick rahhega  .to understad this more see position wala tutorial, can be seen in live server*/
+
+    /* jab header element  ke ander tha navbar elment to sticky apply ni ho raha tha kyuki humne navbar ko sticky kerdia per header elment ki position sticky ni hai aur navbar usme hai so stciky kaam ni karega jo bhi uska function hai  */
+    position: sticky;
+    top: 0;
+}
+
+
+
+/* jaise humne backhground lagana seekha tha using after and befor pseudo selector to wahi use kerke background lagayenge see below */
+
+/* to understand this property just try to think deep then u will understand*/
+
+/* so humne navbar id waali div element pe before lagaya humne mtlb  isse pehle ayega content ya properties jo bhi lagayenge*/
+
+/* to ye navbar ke piche aa jayega kyuki before use kera hai */
+/* header ke before karenge to puri screen pe aa jyega . kerke dekho to understand more*/
+/* header::before */
+
+#navbar::before{
+    
+    /* isse blank chodd denge */
+    content: "";
+    /* so ye property  piche aa jayega  */
+    background-color: black;
+    
+    /* position :absolute se jo bhi properties set hogi wo relative to its parent set hogi  in this case iska parent body tag hai */
+    position: absolute;
+    /* using property to set position of backgound color  */
+    top: 0px; 
+     left: 0px;
+     /* 100% ka mtlb puri jitni space avaialable hai uss element ya tag ya window me  */
+     height: 100%;
+     width: 100%;
+     
+     /* isse content uper aa jayega sara .z-index jiska kam hoga wo cheez uske niche aa jaati hai aur jiska bada hota hai z-index wo uper aa jata hai usse cheez ke as we have studied before . see that lecture to understand */
+    /* so yaha iska z-index kam hai navbar se */
+    z-index: -1;
+    
+    /* isse light ho jayega and transparency level set ho jayega  jisse uske uper ka content achi tarah dikhe */
+    opacity: 0.4;
+    
+}
+/* navigation bar: styling logo and image */
+
+/* yaha logo id waale div ko target kera hai  */
+#logo{
+
+    margin: 7px 15px;
+ 
+}
+
+/* yaha #logo id wala div hai usme jo img tag hai usse target kiya hai */
+#logo img{
+    height:70px;
+    margin: 5px 8px;
+}
+
+/* navigation bar: list item styling */
+
+/* display flex se jo ul ke ander list item hai wo row format (item seedhe ho jayenge)  me aa jayenge as bydeafult flex-direction is row can be seen in live server  */
+/* jo #navbar id waale div me ul  hai usse target kiya hai*/
+/* jab flexbox ni hota to layout banan bhaut muskil hota tha but ab ni hota because we have flexbox */
+#navbar ul{
+    display: flex;
+    /* google font se laaye hai ye ubuntu font */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*  jo #navbar id waale div me ul  hai aur jo usme li hai usse target kiya hai */
+#navbar ul li{
+    /* isse bulletins hat jayenge list ke .jo anchor tag me underline hoti hai wo text-decoration property ko none kerne se hat ti hai */
+    list-style: none;
+
+    /* rem unit se html tag ya root element hota hai uski relative size set hota hai */
+    font-size: 1.3rem;
+}
+
+
+/* jo #navbar id waale div me ul  hai aur jo usme li hai and li me jo anchor tag hai usse target kiya hai */
+#navbar ul li a{
+    /* this is explanation is not very clear try by doing yourself or practically kerke dekho khud se
+     */
+
+    /* so hum padding a ko denge li ko nahi because hum chahte hai ki jab hum hover kare to a wala pura element hover ho jaaye ager hum li me dete padding to li me padding aa jaati and uske ander ata anchor tag so jab li ke area me hover kerte to jo bhi effect dala hai wo aa nahi ata to effect laane ke liye hum chah rahe hai ki a hai wo puri jagah le  */
+    
+    /* display ko block karenge becasue bydeafult inline hoti hai.ager inline rahegi to height aur width set ni ker payenge baaki google pe dekho ki inline element ko padding aur margin de sakte hai kya */
+    display: block;
+    /* uper display block isliye kiyuki padding deni hai  */
+    padding: 3px 20px;
+    /* isse curveness aa jayegi sides pe */
+    border-radius: 8px;
+    /* isse anchor tag ke niche jo underline hoti hai wo remove ho jayegi */
+    text-decoration: none;
+
+    /*jo bhi a me text hai uska color white ho jayega  */
+    color: white;
+}
+
+/* jab anchor tag ke content pe hover karenge to jo properties defined below wo apply ho jayegi*/
+
+#navbar ul li a:hover{
+
+    /* anachor tag ke text ka  color black ho jayega */
+    color: black;
+    /* anchor tag ka background-color white ho jayeg a*/
+    background-color: white;
+}
+
+/* styling section whose id is home */
+
+#home{
+    /* #home id humne section me de rakho hai jisse humne flex bna diya hai so section flex container hai and uske ander jo boxes hai wo flex item hai so isse  flexbox bna diya hai humne*/
+    display:flex;
+    flex-direction: column;
+    /*jo button wala box hai usne puri jagah gher li hai jab humne flex-direction ko column kiya so usse thik kerlenge hum   */
+
+    /* padding se content and border ke beech me space aa jati hai. so ye  innerpart ke liya hota hai isse hum text adjust kerte hai */
+    padding: 3px 200px;
+    /* isse horizontally and vertically flex items saare center me aa jayenge */
+    justify-content: center;
+    align-items: center;
+
+    /* height 468px de rahe hai #home jis element ko target ker raha hai usko */
+    height: 468px;
+
+        /*ye kerke dekho fir samjho isse kya effect aa raha hai aur kyu. it might not be true but i think for after and befor pseudo selector unka parent wahi hota jiss elment ke saath usse use kerte hai  */
+        /* i think jo background-image laga rahe hai uski height jiske saath pseudo selector use kerte hai uske according aati hai */
+    /* position: relative; */
+
+
+
+}
+
+/* ab section pe background lagane ke liye before and after pseudo selector ka use karenge. joki humne seekh rakha hai */
+#home::before{
+    content: "";
+    /* abhi hum css folder me hai hume isse bahr ana isliye ../ use karenge fir image ka jo bhi naam hai usse uske extension ke saath likh denge */
+    /* backgroun shorthand hai for  background image , background repeat ,background position */
+    /* background position me center center dala hai jisse image center me aa jayegai and then fir cover se cover kerlegi screen ko */
+    /* background: url('../bg.jpg'); */
+    background: url('../bg1.jpg') no-repeat center center/cover;
+
+    /*ye saari properties uper dekh chuke hai aur samjh chuke hai jab humne background-image navbar se pehle insert kari thi   */
+    
+    position: absolute;
+
+    /* jo ye problem aa rahi thi ye #navbar me relative dene se aa rahi thi uper usme jaaker dekho to understand */
+    /* top and left se jo background image lagayi hai uski position set kerdi so top se 0 and left se 0 
+       kerdiya jisse hume jo probleme aa rahi thi our services ko neeche laane me wo resolve ho gayi because psition set kerdi hai humne iski yah per. ye humne baad me kera hai jab services waale section ko  style ker rahe the */
+
+       /* ye top:0 and left 0 kerna bhaut jaruri hota hai */
+    top:0px;
+    left:0px;
+
+   
+    /*  jab niche client section bnaya aur uski hieght adjust ki to services wala section uper aa sakta hai home waale section ke to usse theek kerne ke liye height adjust ker sakte hai yaha per % ki jagah pixel me and #home wale element me bhi height adjust kerni padegi*/
+    height: 100%;
+    width: 100%;
+
+    z-index: -1;
+
+    opacity: 0.8;
+}
+
+/*styling paragraphs ,heading and button inside section element which has #home id  */
+
+/* utility class  bana rahe hai jisse section me jo heading hai usse style ker rahe hai .ye class jis element me daalenge uss element me iski properties implement ho jayegi . jo isme css daalenge wo throughout use karenge so isse reuse ker sakte hai same tarah se aur kisi heading ko dikhane ke liye bhi jab mantainable code base pe work ker rahe ho */
+
+/* paragraph ke liye bhi utility class bna sakte hai */
+
+
+.h-primary{
+    
+    /* rem se relative to html root element size set hoga  */
+    /* font-size se font ka size set ker rahe hai */
+    font-size: 2.8rem;
+    /* space mil jayegi content and border ke between isse and isse text ko manage ker sakte hai using spacing */
+    padding: 12px;
+    /* font jo google font se laaye hai wo lagayi hai */
+    font-family: 'Bree Serif', serif;
+}
+
+/* abhi for this website hum target ker rahe hai specifically elements ko */
+
+#home h1{
+    /* text ka color white ho jayega */
+    color: white;
+    /* text align ho jayega center me box ke */
+    text-align: center;
+    /* google font se laye hai ye font bree serif font ye */
+    font-family: 'Bree Serif', serif;
+}
+
+
+#home p{
+    /* paragraph ke text ka color white ker diya */
+    color: white;
+
+    /* paragraph ke text ko align kerdiya center me */
+    text-align: center;
+
+    /* paragraph me text or font ka size 1.5 rem kerdiya */
+    font-size: 1.2rem;
+    /* google font se laye hai ye font bree serif font ye */
+    font-family: 'Bree Serif', serif;
+    /* syntax for putting image from image folder  */
+    /* background-image: url(../img/2.png); */
+}
+
+/* .btn naam ki utility class bhi bna rahe hai jise baad me bhi use ker sake  */
+/* .btn se button ko target ker rahe hai jo section ke ander hai */
+.btn{
+    /* padding di hai button ko kyuki bydefault jo isse padding milti hai wo kaafi idher-udher hoti hai */
+    padding: 6px 20px;
+
+    /* border diya hai button ko */
+    border:2px solid  white;
+
+    /* button ke background me brown color aa jayega isse . yaha hex value di for color*/
+    background-color: #7e5757;;
+
+    /* button ke ander text ko white color mil jayega */
+    color: white;
+    /* margin se box ko adjust ker sakte hai website ke by moving in top,left,right and bottom direction */
+    /* humne yaha saari direction ke liye 17px di hai margin .thi is for out space and box adjustment  */
+    margin: 12px;
+
+    /* button ke font ya text ko size mil jayega isse which is 1.2 rem */
+    font-size: 1.2rem;
+
+    /* border radius se curveness mil jayegi button ki sides ko */
+    border-radius: 10px;
+
+    /* isse pointer(haath sa bana ayega kuch) ayega jab mouse ko button pe leker jayega */
+    cursor:pointer
+
+    
+}
+
+/* services section */
+
+/* .center utility class hai jisse text center me hota hai ager kisi element me use karenge */
+
+.center{
+    /* text-align se text center me aa jata hai */
+    text-align: center;
+}
+
+/* h-secondary utility class hai jo secondary headings ki styling ke liye use hoti hai */
+
+.h-secondary{
+    /* font ka size milega isse */
+    font-size: 1.6rem;
+
+    /* saari direction me padding 12px ki milegai. ye box ko bada bhi ker deti hai by increasing space between content and border */
+    padding:12px;
+    /* font jo google font se laaye hai wo lagayi hai */
+    font-family: 'Bree Serif', serif;
+}
+
+#services{
+
+    /* margin aa jayegi saari direction me 34px ki. use for box adjustment .border ke bahar hoti hai margin
+       .it is used for outer parts so hum box ko margin ke through move kerke adjust ker sakte hai uski position */
+    margin:34px;
+
+    /* flexbox bna denge #services waale section element ko taaki uske under ke items ko layout ker sake aur jo bhi boxes ayenge uske ander unko bhi. aur section ko bhi layout ker sake */
+    display: flex;
+
+}
+
+/* yaha #services wale div me .box naam ki class hogi div me usse target kiya hai */
+
+#services .box{
+
+    /* border isliye diya hai taaki pta chale ki boxes kaise dikh rahe hai hamare  */
+    border: 2px solid #7e5757;
+
+    /* padding di hai 34px sab side ke liye */
+    padding: 34px;
+
+    /* margin 3px top and bottom ke liye and left and right ke liye 6px di hai */
+    margin:3px 12px;
+
+    /* border-radius: 23px; diya hai */
+    border-radius: 23px;
+
+    /* isse background color add ho jayega .box wale div me  jo bhi diya hoga  wo */
+    background-color: #f3f3f3;
+}
+
+
+/* yaha #services wale div ke ander .box wale div ke ander img element hai usse target ker rahe hai */
+/* jo image daali hai img tag me wo bhaut badi hoker dikh rahi aur page se kahi aur bhaage jaa rahi hai mtlb overflow ho rahi hai so isse theek karenge yaha .so image ko kaboo me layenge wo bekaboo ho chuka hai*/
+#services .box img{
+    /* image tag ki height dedi humne 100px  */
+    /* ab hamari image page ke ander aa jayegi pehle jo overflow ho rahi thi page se */
+    height: 160px;
+
+    /* image ko center me laane ke liye margin:auto karenge per ye property jabhi laga payenge jab display:block ho to pehle display:block karenge fir margin:auto karenge */
+
+    /* dsiplay:block se content puri width aur space leta hai leta hai aur dusre content ko next line me push ker deta hai */
+    display: block;
+    /* isse left and right side me equal space or margin milegi jisse elementt center me aa jata  */
+    margin:auto
+
+}
+
+/* yaha paragraph ko target ker rahe hai jo .box ke ander hai and #services ke ander .box hai   */
+#services .box p{
+
+    /*  yaha font faimly di hai  ubuntu name ki jo hum google font se laaye . ye paragrpah pe apply ho jayegi jo .box ke ander hai and j0.box #services waale section me hai*/
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* client section me naam aur photo laga sakte hai client ki*/
+
+
+#client-section
+{
+    /* #client-section wale element ki height specify kerdi yaha */
+    /* height: 344px; */
+
+    /* position relative kerne se jo height set kerne me issue aa raha tha wo nahi ayega because ye utni jagah lega  jitni  isse required hai */
+    position: relative;
+
+}
+
+
+/* hum yaha pseudo selector like after and before use kerke client-section ko background-image dena chahte hai */
+#client-section::before{
+
+    /* content ko blank rakhenge  */
+    content: "";
+    /* position absolute denge jisse iski position relative to its parent set ho  */
+    position: absolute;
+
+    /* ye dono likhne se image top pe chali jaa rahi hai can be seen in live server */
+
+    /* top: 0px;
+    left: 0px; */
+    /* yaha background image ka link ya source daal denge url me*/
+    background-image:url('../bg.jpg');
+    /* widtha and height 100% di hai */
+    width: 100%;
+    height: 100%;
+    /*   practically iski height kam kerke dekho to explore more */
+    /* height: 50%; */
+    /* z-index -1 kerdi jisse content image ke uper show hoga and ye niche dikhayi dega content ke  */
+    z-index: -1;
+    /* opacity se transaprency set kari hai humne mtlb lightness set kari hai background-image ki */
+    opacity: 0.5;
+
+}
+
+#clients{
+    /* flexbox bna diya humne #clients wale element ko using display:flex so.#clients wala element flex container ban jayega aur uske ander jo element hai wo flex item ban jayenge*/
+    display: flex;
+
+    /* vertically and horizonatlly center kerne ke liye align items and jsutify content property use karenge */
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* so humne img tag ko target kiya hai jo .client-item wale div me hai and .client-item wala div #clients wale element me hai  */
+#clients .client-item img{
+
+    /* height di hai img tag ko */
+    height: 124px; 
+}
+
+/* so yaha .client-item waale element ko target kiya hai */
+.client-item{
+
+    /* padding 34px di hai for all direction */
+    padding: 34px;
+
+
+}
+
+
+
+/* contact session ki styling karenge yaha */
+
+/* yaha #contact jis element ki id hai usse contact kiya hai */
+#contact{
+    /* position relative di hai . this will helpe in inserting background image as #contact::before me position absolute denge which mean uski position relative to its parent set hogi aur uska parent #contact hoga jo apni normal position pe rahega beacuse uski position relative kerdi hai humne uske according set ho jayegi position background ki . all thhis written is assumption of mine*/
+    position: relative;
+}
+
+/* background image insert ker rahe hai form waale section ke liye using before pseudo selector. so #contact wala element hai uske pehle background-image laga rahe hai using befor pseudo selector */
+#contact::before{
+    /* ye balnk chodd rahe hai */
+    content: "";
+
+    /* position ko absolute set karenge which mean set position relative to its parents */
+    position: absolute;
+
+    /* width and height 100% de denge . 100% ka mtlb puri 100% space lelo jo available hai*/
+
+    width: 100%;
+
+    height: 100%;
+
+    /* z-index -1 set kerne se background niche dikhayi dega and jo form ka content hai wo iske uper because #contact::before ka z-index greater hai isse . search about z-index property on google to explore more or see in its tutorial which we have studied  */
+    z-index: -1;
+
+    /* isse background light ho jayega jisse text aur content achi tarah dikhe */
+    opacity: 0.7;
+
+    /*   background image daaldi hai yaha in url  jo niche show hogi text or form ke   */
+                        /* bacground-repeat ,background position  properties bhi set kerdi hai humne , background image ke saath background ki shorthand property use kerke */
+    background: url('../contact.jpg') no-repeat center center/cover;
+
+}
+
+
+
+/* hum form tag ko target ni karenge because aisa ho sakta hai hum form ko navigation bar me use kare saerch ko submit kerne ke liye to hum koi bhi mess ni create ni kerna chahte isliye usse chedhenge nahi */
+
+
+/* contact-box ko target kiya hai yaha  pe taaki isme padding andd other properties de sake */
+
+#contact-box{
+
+    /* iss #contact-box waale element ko flex-box bna rahe hai so ye flex-container and iske ander flex-items hai div me jiski class form-group hai and aur bhi hai*/
+    display: flex;
+
+    /* ab center me kerdenge  flexitems ko saare using align-items and jusify content. can be seen in live server */
+    justify-content: center;
+    align-items: center;
+
+    /* padding dedi hai bottom se  34px #contact-box waale element ko  */
+    padding-bottom: 34px;
+}
+
+
+/* yaha per #contact-box wala elment hai uske ander jo form tag hai usse target kiya hai */
+#contact-box form{
+
+    /* so yaha form ki width ko 40% kerdi hai .so 40%  width occupy karega out of 100% space jo available hai screen pe*/
+    width: 40%;
+}
+
+/* #contact-box wale element me jo label tag hai usse target ker rahe hai*/
+#contact-box label{
+
+    /* so label ke font ya text  ka size 1.3 rem dediya hai */
+    font-size: 1.3rem;
+
+    /* google font se ubuntu  font jo laaye hai wo laga diya  label ke text ke liye  jo bhi hai*/
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+
+/* so yaha input ko style kerne ke liye usse target ker rahe hai joki uss element me hai jiska #contact-box naam ki id hai */
+/* textarea ko style kerne ke liye usse target ker rahe hai and textarea #contact-box naam kid id waale element me hai */
+/* iss syntax se dono me apply hogi css properties */
+
+#contact-box input,
+#contact-box textarea{
+    
+    /* input and textarea jayda space lelnge aur iss cheez ko theek kerne ke liye uper #contact box ko style ker rahe hai uper . iske theek kare  bina kaam ni chalega  */
+    /* width 100% dedi input and text-area waale box ko */
+    width: 100%;
+    
+    /* padding dedi input and textareea ko yaha pe in rem unit */
+    padding:0.5rem;
+    
+    /* curveness aa jayegi input and textarea ke boxes ke side me isse */
+    border-radius: 9px;
+    
+    /* jo placeholder hai input me and textarea me uske font or text ka size badh jayega and input and textarea me likhenge jo uska bhi font size badh jayega joki hum dekh sakte hai jab hum usme kuch likhenge .do try it practicalyy by applying and not applying this property */
+    font-size: 1.1rem;
+
+}
+/* styling footer  */
+/* footer ko hum aur bada bhi bna sakte hai , padding de sakte hai , aur text ho sakta hai isme etc */
+/* footer ke text ko center kera center class se  */
+footer{
+
+    /* isse footer ke  background ko black color milega */
+    background-color: black;
+
+    /* isse jo bhi text hoga footer me usse white color milge */
+    color: white;
+
+    /* padding di hai yaha top,bottom me 9px and left and right me 20px  */
+    padding: 9px 20px;
+
+}

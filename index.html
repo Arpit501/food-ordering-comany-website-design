@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>best online food delivery services in india | foodie.com</title>
+    <!-- yaha style.css jo css folder me hai usse link kera hai html se using link:css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- website ko responsive banane ke liye css add kari hai responsive.css file me  aur uss file ko  link kera rahe hai yaha html me -->
+
+        <!-- yaha pe abhi hume isse bus include kera hai but ager hum chahte hai ki jab include ho jab max-wdith ki certain  value ho to uske liye hum kuch likhenge jisse aisa ho . so ye kaam ek line me ker sakte hai aur jaha per humne responsive.css daali hai uske ander daalenge . hum daalenge media="screen and (max-width:1100px)" . (max-width:1100px)  ye condition likhi hai jiska mtlb ye hai ki jab width 1100px aur 0 ke beech me ho to ya 1100px or 0px ho to ye waali stylesheet apply hogi and screen ka mtlb ye screen devices pe applicable  hai . ye type of media query  daali hai humne isme)-->
+
+        <!-- hum inspect kerke device toolbar me responsiveness  dekh sakte hai website ki mtlb screen ko kitna chota kerne pe website unsreponsive honi shuru ho rahi hai fir wo value jo condition daal thi jo  usme daal sakte hai -->
+
+        <!-- there are some standards on internet jo btate hai ki  kitni screens of the media query required hai mobile ke liye  jisse css  trigger kare hum. just think and understand this or search on google to understand . but abhi ke liye hum apni requiremnet ke according daalenge media query-->
+
+    <!-- max-width : lets take an expample to understand . maanlo max-width humne 1100px li hai to uska mtlb ye hai ki width jayda se jayda 1100px hogi baaki width 1100px se 0 ke between ho sakti hai - aur min-wdith maanlo 1100px hai iska mtlb ye hai ki kam se kam width 1100px ho sakti hai baaki width 1100px se jayda hi 
+    hogi-->
+
+    <link rel="stylesheet" media=" screen and (max-width: 1100px) " href="css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- yaha google font se jo font laa rahe hai wo link kera hai html se . isse do font aa rahe ubuntu and bree serif naam ka -->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- header is a semantic tag -->
+    <!-- <header> -->
+
+        <!-- nav sematic tag hai jisse humne id di hai navbar kyuki website me navbar ek hi hota . so id se uniquely identify ker payenge   -->
+
+
+        <!-- so yaha navbar bana rahe hai website ka -->
+        <nav id="navbar">
+
+            <!-- ye div website ke logo ke liye hai jo bhi hum daalengee  -->
+            <div id="logo">
+                <!-- so yaha logo waali image daaldi website ke liye using img tag and src me image ka source daaldiya or image filename or link  alt me foodie.com daal rahe hai so ager image load ni hui to foodie.com likha hua aa jayega because of alt attribute -->
+                <img src="logo.png" alt="">
+                <!-- abhi achi ni lagegi website because humne kuch add ni kiya like css and markup and we will convert it into a good website -->
+            </div>
+
+            <!-- unordered list banayenge -->
+            <ul>
+                <!-- unordered list me kuch list items daalenge -->
+
+                <!-- syntax for writing content directly inside list tag
+                
+                    list.item{yaha pe content likhdo jo bhi chaiye either text or tag}*5
+
+                        so {} inn curly braces daalne padenge fir jo bhi content daalenege wo aa jayega li tag me .humne *5 kera hai to wo 5 baar aa jayega -->
+                <!-- li tag me humne class item naam ki di hai -->
+
+                <!-- ye navbar ka part hai isme  website ke liye  options diye hue hai -->
+
+                <!-- <li class="item"><a href="#">home</a></li>
+                <li class="item"><a href="#">service</a></li>
+                <li class="item"><a href="#">restaurants</a></li>
+                <li class="item"><a href="#">food item</a></li>
+                <li class="item"><a href="#">about us</a></li>
+                <li class="item"><a href="#">contact us</a></li>
+                 -->
+
+                 <!-- but smooth scrolling to apply ho nahi rahi hai hamare page me -->
+
+                 <!-- to smooth scrolling ko apply kerne ke liye humne jo kera hai wo kerna padega . neeche para me samjha rakha hai ki kya kerna  hai -->
+
+                 <!-- humne css me html tag pe sroll behaviour naam ki property lagayi and uski value smmoth daali hai taaki neeche jo kera hai wo ho paaye -->
+
+                 <!-- so hum chahte hai ki koi home pe click kare navigation menu me to wo uss section pe phauch jaaye jiski id #home hai   to isliye humne href me #home  id likhi  hai . hum anchor tag ke href me link daalte hai  jis per hume phauchna hai fir jo anchor tag me jo text likhte uspe click karenge   to jo href me link dala hai uspe phauch jaayenge -->
+                <li class="item"><a href="#home">home</a></li>
+                <!-- so hum chahte hai ki koi service pe click kare navigation menu me to wo uss section pe phauch jaaye jiski id #services-container hai   to isliye humne href me services-container id likhi hai-->
+                <li class="item"><a href="#services-container">service</a></li>
+                <li class="item"><a href="#">restaurants</a></li>
+                <li class="item"><a href="#">food item</a></li>
+                 <!-- so hum chahte hai ki koi about us pe click kare navigation menu me to wo uss section pe phauch jaaye jiski id #foot  hai   to isliye humne href me #foot  id likhi hai-->
+                <li class="item"><a href="#foot">about us</a></li>
+                <!-- so hum chahte hai ki koi contact us pe click kare navigation menu me to wo uss section pe phauch jaaye jiski id #contact  hai   to isliye humne href me #contact likhi hai-->
+                <li class="item"><a href="#contact">contact us</a></li>
+
+            </ul>
+
+
+        </nav>
+
+    <!-- </header> -->
+
+    
+    <!-- to section bnaker background image lagayenge navbar ke neeche -->
+
+    <!-- home naam ki id di hai section ko -->
+    <section id="home">
+
+        <h1 class="h-primary">welcome to my foodie.com</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias recusandae necessitatibus </p>
+
+        <!-- yaha paragraph me text kam kera hai taaki dono paraagrph ke text jab website pe dekhe to ache lage pehle dono paragraph me text baraaber the to ache ni lag rahe but v shape me aa gaye to acha lag raha hai paragraph ke text-->
+        <!-- this thing which we have done here  is useful in website to make its looks good -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+        <button class="btn">order now</button>
+    </section>
+
+    <!--  so hr dala hai jo section start ho raha hai uski starting and end me  jisse line aa jayegi ager acha laga raha hai to rakho werna remove bhi ker sakte ha -->
+    <!-- <hr> -->
+    <!-- next section  hum services ka bnayenge jisme btayenge ki konsi services hum provide kerte hai -->
+
+    <!-- isse section ko class services-container naam ki di hai . class ko hum multiple element me use ker sakte hai and ek element me multiple class ho sakti hai. ye uniquely identify ni kerta  -->
+    <!-- #services-container ke liye humne koi bhi css ni daali hai -->
+    <!-- pehle service-container class ka naam tha jisse humne id bana diya smooth scrolling apply kerne ke liye ispe -->
+    <section id="services-container">
+    <!-- <section class="services-container"> -->
+
+        <!-- yaha h-primary class di hai jisse hum pehle define ker chuke hai and center class di hai jisse text center me hota hai .so center class apply ker sakte hai kisi bhi element me jisse text center me chaiye ho. center class banane se baar baar text center waali properties ni likhni padegi jab kisi element ko style karenge (like text-align:center)-->
+        <h1 class="h-primary center">our services</h1>
+
+        <!-- yaha div ko id di hai services naam ki -->
+        <div id="services">
+
+
+            <!-- so services ke ander 3 boxes  or card banaye hai ek jaise . jo classes and id pehle me use kari hai and jo info first me di hai wo baaki do ke liye bhi apply hogi kaafi hadd tak  -->
+
+            <!-- yaha box naam ki class di hai. isme img tag use ker rahe hai image daalene ke liye -->
+            <!-- we have kept images of same size which are given below .so that they will remain  symmetric while using-->
+            <div class="box">
+                <!-- img/1.png img file mese 1.png imge daali hai ya link kari hai kuch bhi kehlo  -->
+                <img src="img/1.png" alt="">
+                <!-- h2 ko .secondary naam ki class dedi center naam ki class jisse center me ata hai text -->
+                <!-- so ye secondary heading hai -->
+                <h2 class="h-secondary center">food ordering</h2>
+                <!-- paragraph ko center class dedi jisse isme jo text hai wo center me aa jayega -->
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio perspiciatis
+                    voluptatum molestias  </p>
+            </div>
+
+
+
+            <div class="box">
+                <!-- yaha image link kerdi . jisse image folder se laaye-->
+                <img src="img/2.png" alt="">
+                <!-- heading daaldi yaha  for card-->
+                <h2 class="h-secondary center">food catering</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio perspiciatis
+                    voluptatum molestias  </p>
+            </div>
+
+
+
+            <div class="box">
+                <!-- yaha image link kerdi jisse img folder se laaye hai -->
+                <img src="img/3.png" alt="">
+                <!-- heading daaldi yaha  for card-->
+                <h2 class="h-secondary center">bulk ordering</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio perspiciatis
+                    voluptatum molestias </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- <hr> -->
+
+    <!-- yaha id di hai client-section naam ki section me .iss section me client ke naam and images  daalenge -->
+    <section id="client-section">
+
+        <!-- yaha h1 heading me h-primary and center naam ki class dedi hai for styling h1 -->
+        <h1 class="h-primary center">our clients</h1>
+
+        <!-- div banaya hai jisme id di hai clients naam ki  -->
+        <div id="clients">
+
+            <!-- div banaya hai jisme class di hai client-item  naam ki. aise item aur bhi bnayenge  -->
+            <div class="client-item">
+                <!-- yaha img tag ke through image laga di hai client ki ye image img folder mese aa rahi hai and ager image load nahi screen ni hui kisi wajah se to our client likha ayega kyuki alt me our client likha hai . image ka naam logo1.png hai and img folder mese aa rahi hai isliye img/logo1.png kerke likha hai-->
+                <img src="img/logo1.png" alt="our client">
+            </div>
+
+            <!-- so yaha humne multiple client-item bana diye jisme humne image lagayi hai and isme saari class and other information similar jaise uper humne client-item banayi hai jisme image lagayi hui hai -->
+
+            <div class="client-item">
+                
+                <img src="img/logo2.png" alt="our client">
+            </div>
+            <div class="client-item">
+               
+                <img src="img/logo3.png" alt="our client">
+            </div>
+            <div class="client-item">
+               
+                <img src="img/logo4.png" alt="our client">
+            </div>
+
+        </div>
+
+
+    </section>
+
+    
+
+
+    <!-- ab hum contact wala form banyenge yaha niche fir iski styling karenge css me-->
+
+    <!-- section ko  id di hai contact naam ki -->
+    <section id="contact">
+
+        <!-- h1 heading me  h-primary and center class di hai jo defined ker chuke hai. h-primary is for styling heading and center text ko center me laane ke liye -->
+        <h1 class="h-primary center">contact us</h1>
+        <!-- div banayenge jisse id denge contact-box naam ki -->
+        <div id="contact-box">
+            <!-- form banayenge using form tag jisse hum backend me process ni karenge because we have not learned backend lanaguage like (nodejs)  -->
+            <!-- yaha pe ye form kaam ni karega reason iske uper waale para me de rakha hai . ek reason ye bhi hai ki humne javascript implement ni kari hai -->
+            <form action="">
+
+                <!-- div banayenge jisse form-group naam ki class denge and iss div ke ander do cheez dalenge as given below -->
+
+                <!-- aise kayi saare form-group class wale div  bana denge jisme lable and input ho for taking more details in form -->
+
+                <div class="form-group">
+                    <!-- label dala hai pehle and label ke attribute for me hum id daalte hai jo bhi id input me daali hai wo -->
+                    <!-- label ke content me Name: likh diya  -->                  
+                    <label for="">Name:</label>
+                    <!-- input liya jiska type text hai and isme name attribute me name daal denge and id me bhi name daal denge  and placeholder me enter your name likhenge-->
+
+                    <!-- use of name attribute 
+                        
+                            The name attribute specifies a name for an HTML element. This name attribute can be used to reference the element in a JavaScript. For a <form> element, the name attribute is used as a reference when the data is submitted.
+
+                    -->
+                    <!-- jo placeholder me likhenge wo likha aa jyega input ke box me -->
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+
+                </div>
+
+                <!-- ye div similar hai uper waale div ki tarah isme same content hai which is label and input and isme class bhi same hai  and ye bus different information input lene ke liye hai -->
+
+                <!-- ye email input lene  ke liye bnaya hai -->
+
+                <!-- inn sabme id different honi chaiye because id uniquely identifies an element  -->
+                <div class="form-group">
+                                    
+                    <label for="email">Email:</label>
+                   
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+
+                </div>
+
+                <!-- ye phone number lene ke liye bnaya hai -->
+                <div class="form-group">
+                                    
+                    <label for="phone">Phone number:</label>
+                   
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone number">
+
+                </div>
+
+                <div class="form-group">
+                                    
+                    <label for="message">message:</label>
+                   
+                    <!-- yaha message ke liye text-area use karenge  .column and rows hum badha sakte hai textarea bda kerne ke liye baaki abhi jaisa hai waisa hi rehen denge-->
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+
+    <!-- ab end me footer daal denge  which is an semantic elemnet and it represents the end of website 
+        isme website ke end me jo copyright and baaki sab likhte , ya links dete hai pages ke wo sab ayega
+    -->
+
+    <footer id="foot">
+        <!-- div banaya hai jisse center class di hai jo text ko center kerti hai and iske ander copyright likh denge fir-->
+         <!--  isko bhi css se style karenge thoda bhaut -->
+        <div class="center">
+            copyright &copy;  wwww.foodie.com. All rights reserved!
+        </div>
+    </footer>
+
+
+
+    <!-- to learn more about emmet abbreviation in vs code. ye installed ata hai pehle se vs code me search on goole abo href="#"ut it -->
+
+    <!-- to understand how to use after and before pseudo selctor to insert background color or image . to isse practically kerke dekho -->
+
+    <!-- ctrl + y to redo an undone action 
+    
+    ex to understand:
+    Alternatively written as Control+Y and C-y, ^y, Ctrl+Y is a keyboard shortcut to redo an action reversed using the undo command. For example, if you used the Ctrl+Z shortcut to undo what you thought was a mistake, but realize it wasn't, you could press Ctrl+Y to redo the previous action.
+
+-->
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+
+
+/* isme website ko responsive banane ke liye css likhenge  aur iss stylesheet ko add kerdenge html me jaker */
+
+/* ye responsive.css add kerne se ye   dershaayegi ki phone and othr devices like tablet ,dekstop me kaise dikhegi website  */
+
+/* ab responsive.css  ko media query ke saath kaise add kerte hai wo dekhenge neeche hum */
+
+
+/* just to check jo humne html me link dala hai  <link rel="stylesheet" media="screen and (max-wdith:1100px;)" href="css/responsive.css">  wo kaam ker raha hai ki nahi  jisme humne dala tha ki screen jab 1100 pixel se choti hogi to responsive.css waali styelsheet apply hogi*/
+
+/* so jab screen 1100px se 0 px ke between me hoga to background red   hoga baaki 1100px ya 0px hua jab bhi apply hogi this is according to stylesheet link which we have linked in html */
+
+/*  ye dene se website unresponsive ho rahi thi although ye hume daalna hi nahi tha ye bus testing ke liye use kerna hai. think why it is happening */
+/* body{
+    background-color: red;
+} */
+
+/* so screen ko 1000px se chota kerke hi website unresponsive ho jaati hai jisse hume theek kerna hai responsive banake*/
+
+
+
+
+
+
+
+
+
+
+
+/* so hum order me kaam karenge and order me set karenge sab kuch . it will come handy later when we visit website . to comment ke according trace ker sakte hai*/
+
+
+
+
+
+
+
+
+
+
+
+/* navigation section */
+/* to sabse pehle hum navigation menu me chahte hai logo center me aa jaye and and jo title aur buttons hai navigation menu me wo logo ke neeche aa jaye so iske liye neeche btaya hai ki kaise karenge ye  */
+
+/* so hum chahte hai ki parent flexbox jo hum #navbar waale element me dala hai wo fold ho jaaye. and fold kerne ke liye hu  flex-direction:column kerdenge jisse hamara kaam ho jayega*/
+
+#navbar{
+    /* so isse flex-item hai #navbar me which is div jisme logo hai and ul jisme list items hai so inn dono ki flex-direction column ho jayegi  */
+    flex-direction: column;
+}
+
+
+/* li hai jo ul me and ul #navbar id waale element hai so usse target kiya hai kyuki li me font-size jayda de rakha tha pehle jisse li ke ander jo anchor tag ka content hai wo webiste ko phone size ka kerne pe overflow  ho raha tha isliye font-size set karenge  jisse problem  solve ho jayegi */
+#navbar ul li{
+    /* so yaha li ke ander jo bhi content hai uska font-size:0.8 rem set kiya hai  */
+    font-size: 0.8rem;
+}
+
+/* so yaha anchor tag ko target kiya hai jo li ke ander hai li ul ke ander hai and ul #navbar id waale elment ke ander hai . anchor tag a hai jo usme humne pehle padding jayda de rakhi thi jisse jab hum website ko phonesize ka ker rahe the device toolbar ki help se to anchor tag ka content overflow ker raha hai so hum yaa padding set kerdenge*/
+#navbar ul li a{
+    /* so humne yaha left and right ki padding 10px kerdi and top,bottom ki 3px hi hai height */
+    padding: 0px 10px;
+
+   
+}
+/* yaha ul ko target kiya hai jo #navbar id waale element ke ander hai */
+#navbar ul{
+     /* isse  ul  me 10px ki padding milegi wo bhi bus bottom se  . top se requiremnet ni hai because of website small size*/
+    padding-bottom: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* home section */
+
+/* so hum home ka size chota karenge because screen chote kerne pe uski height niche tak chali jayegi apni original position se jisse problem create hogi . inspect kerke dekho  */
+
+#home{
+    /* so height home ki 380px kari hai jisse #home wala element hai uski height 38  0px ho jayegi */
+    height: 404px;
+
+    /* so hum chahte hai ki jo me home paragraph ,heading and button hai wo jagah puri le . humne padding di hui thi pehle bhaut jayda isliye ye bhida bhida aa raha hai website choti kerne pe and overflow ho jaa raha hai isliye yaha padding set karenge jitni required hogi  */
+    /* so left and right me pehle 200px thi padding jisse humne 50px kerdiya jisse problem solve ho jayegi*/
+    /* yaha per aur kam kari hai padding codewithharry ne around 28px kari hai left and right ki but hum ni ker rahe kyuki hum jaisi dikh rahi hai waisi hi sahi lag rahi hai. codwithharry ne isliye daali hai padding because phone me space kam hoti hai waise hi and padding se aur jagah ghir jaayegi ager denge to   */
+    padding: 3px 50px;
+}
+
+/* #home::before jo ye pseudo selector lagaya tha iski height change  kerni padegi because jo #home wala elment hai uske ander jo elements wo uske bahar jaa rahe hai so #home:before ka  size badhana padega . inspect kerke dekho tab samjh ayega*/
+#home::before{
+    height: 530px;
+}
+
+/* paragraph and heading ko bhi chota karenge uske font-size  ko kam kerke because wo navabar me overflow ho rahe hai because uska size bada hai jo humne style.css me define kera tha  */
+
+/* #home id wale element me jo paragraph tag hai usse target kiya hai */
+#home p{
+    /* so font-size diya hai 1 rem to text of paragraph . px me bhi de sakte the size but it is better to use rem because ye responsive banane me help karega */
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* service section */
+
+/* so jo services wala section hai usme jo cards banaye wo overflow ho rahe hai jisse jo home wala section hai and navaigation bar waali jagah per gap aa raha hai . so ager overflow ni hoga to gap ni ayega  to usse fix karenge hum pehle*/
+
+/* jo properties style.css me daali hai wo implemented rahegi uske alava jo isme properties daalenge wo jab 1100px se choti karenge screen tab implement hogi. media query wala tutorial jaaker dekho to understand this */
+
+/* yaha #services wala jo element hai usme jo .box  wala jo element hai usse target ker rahe hai */
+#services{
+    /* so humne display flex kera tha  #services wala element to hum chahte hai ki iske flex-item wrap ho jaaye
+    to hum wrap kerne ke liye iski flex-direction:column kerdenge jisse problem solve ho jayegi . problem ye thi ki ye achi tarah dikh ni raha or show ni ho rahe the  tha screen choti kerne pe */
+    flex-direction: column;
+
+    /* padding and margin ko bhi theek kerna padega */
+}
+
+/* images jo service waale section me hai wo website choti kerne pe overflow ho jaa rahi hai apne container ya element ya space jiske ander wo hai . so hum isse fix karenge */
+
+/* so hume image ko  width ke hisaab se lena chaiye jisse hamara kaam sahi hota. humne height set ker rakhi hai so iska scale hum theek karenge */
+
+/* ager hum height ko chota kare jab bhi kaam ho sakta hai but hum width ke according chalenge aur set karenge width  . so isse bhi kaam ho jayega hamara aur hum margin and  padding bhi set  karenge .box waale elment ki  and  #services id waale element ki margin bhi thik karenge*/
+
+/* width set kari img tag ke liye jo .box class waale elment me hai and .box #services id waale element hai */
+
+#services .box img{
+    width: 150px;
+}
+
+
+/* so yaha jo #services wala element hai  usme jo .box class wala elment hai usse target karenge   */
+#services .box{
+
+    /* so padding 12px kerdi saari direction ki */
+    padding: 12px;
+    /* margin left and right  se 10px and top an dbottom se 8px di hai*/
+    margin: 0px 10px;
+
+    /* isse box me only bottom margin ayegi 12px */
+    margin-bottom: 12px;
+}
+
+#services{
+    /* saari direction ki margin 25px set kari hai  */
+    margin: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* client section */
+
+/* yaha #clients wale element ko target kiya hai */
+/* #clients{ */
+    /* so clients waale section me overflow:hidden kerdenge jisse jo element ya jo bhi cheez overflow ker rahi hogi wo fix ho jayegi ya set ho jayegi to understand more about overflow search on google and read about it on w3school */
+
+    /* so jab overflow hoga to wo hide ho jayega  aur aisa kerne se fir utna hi dikhega jitna aa raha hai*/
+    /* overflow: hidden; */
+/* } */
+
+/*pehle uper waali cheez kari thi but usse kam nahi bana isliye neeche wali cheez fir baad me kari */
+
+/* so jab website ki screen choti ker rahe the to clients  ki image daali hai wo hide ho jaa rahi thi kyuki wo humne overflow ko hidden ker rakha tha but jab overflow hidden ni kera tha to wahi images overflow ho rahi thi jisse websitee unresponsive ho rahi thi to hum chahte hai images hide na ho jiska solution niche likha hai iss para ke   */
+/* #clients id waale element pe hum flex-wrap property laga denge jisse jo flex item honge #clients id wala jo flex container hai uske ander wo wrap ho jayenge  jab website ki screen  choti karenge   */
+/* display iska flex pehle se ker rakha tha humne iska */
+#clients{
+    /* so yaha flex wrap ker diya jisse wrap ho jayega  */
+    flex-wrap: wrap;
+}
+
+/* #client id wala jo elment hai usme .client-item class wla element hai usme  jaha kahi bhi ya kisi bhi element ke ander jo img tag hai unki height and width set karenge taaki wo apne container ya space ya jis bhi elment me hai usse overflow na ho */
+#clients .client-item img{
+
+    /* so yaha height and width 60px dedi jisse problem solve ho jayegi  hide hone ki jo pehle aa rahai thi and jo overflow hoke dusre element me chala jata hai uski*/
+    /* height dene  se image khechi hui aa rahi hai isliye image ko comment ker diya. ye humne baad me comment  kari hai   */
+    /* height: 60px; */
+    /* so humne height:auto kerdiya  hai  image ka .jisse image kheechi keheechi nahi ayegi */
+    height: auto;
+    /* width change karenge */
+    width:60px ;
+    /* padding ni denge usse problem ayegi kyuki space ni hai padding dene ke liye jab hum screen choti ker dete hai jab balki padding dene se overflow ho jayega yaha so ignore karenge padding ko and height and width se hi solve ker lenge problem */
+}
+
+/* so yaha hum jo #clients jis element ki id hai uske parent ki height ko badhana padega kyuki jab screen choti karenge to iska parent iske ander jo bhi elments hai unhe contain ni ker payega aur wo overflow hoker kisi aur element me chale jayenge   */
+
+/* so jo humne height set ker raakhi thi #client-section id waale element me usse hta denge style.css mese . ye height humne manually lga rakhi thi. so humne isliye iss height ko htaya taaki wo automatically apni height ko adjust kerle . ye kerne ke baad ye sahi kaamm karega . ye practically kerke dekho . style.css me jaaker dekho samjhne ke liye */
+
+/* image ki quality kharab ho gayi because humne image ko kheech diya hai so isse deal kerne ke liye hum  height jo humne neeche jo likha hai wo  style.css se hta denge ya  comment kerdenge. ye humne baad me discover kera hai isliye ye baad me likha hai/
+
+/* ye uper jo likha i hai sse kerne se solve ni hui problem so hum uncomment karenge jo humne comment kera tha. usse commnet kerne se jab website badi ker rahe the tab dikkat aa rahi thi kyuki image bhaut badi dikhayi de rahi thi */
+
+/* so humne img tag ko target kiya hai jo .client-item wale div me hai and .client-item wala div #clients wale element me hai  */
+/* #clients .client-item img{ */
+
+    /* height di hai img tag ko */
+    /* height: 124px; */
+/* } */
+
+
+
+
+/* ctrl+shift+r is used to hard reset */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*contact us  section */
+
+
+/* ager hum chahte hai ki contact us waale section me jo form banaya hai wo jab mobile phone and other small screen device  dekhe to bada render ya width jayda ho to  hum contact-box ko grab kerke uske form ki width ko change karenge  */
+
+/* so jis element ki id contact-box hai usme jo form tag hai usse target kiya hai and uski width ko 80% kerdiya hai */
+#contact-box form{
+     /* form ki width 80% kerdi */
+    width: 80%;
+}
+
+/* footer  */
+
+
+/* utility classes me jo font-size de rakha tha wo bada tha jisse elemnet ka content overflow ho raha hai website me so font-size set karenge utility class ke */
+
+/* so jo .h-primary naam ki utility class banayi thi heading ke liye usse target kera hai . ab iska font-size set karemnge taaki content ya heading ya text overflow na ho jab website ko chota kare to hum  */
+.h-primary{
+    /* so 2 rem ker diya hai font-size .h-primary waali class jinn heading ya element me hai unke liye  */
+    font-size: 1.8rem;
+}
+
+/* yaha .btn utility class banayi thi buttons ki styling ke liye usse target kiya hai yaha pe because jab website choti ker rahe hai to ussi hisaab se hume button ki styling chaiye hogi. because website choti kerne pe bhi utna bada hi button dikh raha hai joki ajeeb lag raha hai so ye problem solve karenge yaha  */
+.btn{
+
+    /* padding saari direction ke liye 5px set karenge pehle joki bhat jayda thi jisse button bada dikha raha tha */
+    padding: 5px;
+
+    /* font-size button ke text ka 1 rem kerdiya taaki button ke size se match kare aur jayda bada na lage  */
+    font-size: 1rem;
+}
+
